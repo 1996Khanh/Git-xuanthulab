@@ -1,0 +1,42 @@
+Quản Lý Kho Lưu Trữ Trung Tâm và Remote:
+
+1. Tạo Kho Lưu Trữ Trung Tâm:
+git init --bare <tên kho lưu trữ>
+Lệnh này tạo một kho lưu trữ trung tâm (bare repository) không có thư mục làm việc và được sử dụng để chia sẻ giữa nhiều người.
+2. Thêm Remote:
+git remote add <tên remote> <địa chỉ kho lưu trữ>
+Sử dụng lệnh này để kết nối với kho lưu trữ trung tâm thông qua một remote được đặt tên <tên remote>
+3. Kiểm Tra và Hiển Thị Remote:
+Kiểm tra số lượng remote:
+git remote
+Hiển thị thông tin chi tiết về remote:
+git remote -v
+4. Xoá Remote:
+git remote rm <tên remote>
+Sử dụng để xoá remote có tên <tên remote> khỏi danh sách remote.
+5. Đẩy Lên Remote:
+git push -u <tên remote> <tên nhánh>/--all
+Lần đầu tiên, sử dụng -u để thiết lập một liên kết giữa nhánh local và remote.
+Sau đó, chỉ cần sử dụng git push <tên remote> <tên nhánh>.
+6. Kiểm Tra Các Nhánh Đã Được Đẩy Lên Remote:
+git branch -a
+Kiểm tra danh sách tất cả các nhánh cả ở local và remote.
+7. Xoá Nhánh Trên Remote:
+git push --delete <tên remote> <tên nhánh>
+Sử dụng để xoá một nhánh trên remote.
+8. Fetch Dữ Liệu Từ Remote:
+git fetch
+Lấy thông tin về các commit và thay đổi mới từ remote mà không làm thay đổi bất kỳ tệp tin hoặc nhánh nào trên local.
+9. Pull Dữ Liệu Từ Remote:
+git pull <tên remote> <tên nhánh>/--all
+Lấy dữ liệu từ remote về và tự động thực hiện merge vào nhánh local.
+Khi làm việc với kho lưu trữ trung tâm (bare repository), không có thư mục làm việc và chỉ chứa dữ liệu của git.
+Lệnh git pull tự động kết hợp git fetch và git merge.
+10. Gộp Với Remote:
+git merge <tên remote>/<tên nhánh>
+Sử dụng để gộp nhánh từ remote vào nhánh local hiện tại.
+
+
+
+
+ 

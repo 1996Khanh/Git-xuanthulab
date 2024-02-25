@@ -1,0 +1,31 @@
+Nhánh trong git, tạo và quản lý nhánh, gộp nhánh 
+
+1. Kiểm Tra Các Nhánh Hiện Tại:
+git branch
+Lệnh này hiển thị danh sách các nhánh hiện tại trong kho lưu trữ Git và đánh dấu nhánh đang làm việc.
+2. Chuyển Đến Nhánh Khác:
+git checkout <tên nhánh>
+Hoặc sử dụng lệnh mới hơn:
+git switch <tên nhánh>
+Lệnh này được sử dụng để chuyển đến một nhánh khác, ví dụ: git switch alpha sẽ chuyển đến nhánh "alpha".
+3. Xoá Nhánh (Cần Chuyển Đến Nhánh Khác Trước):
+git branch -D <tên nhánh>
+Lệnh này dùng để xoá một nhánh, ví dụ: git branch -D alpha sẽ xoá nhánh "alpha". Lưu ý: Cần chuyển đến một nhánh khác trước khi xoá nhánh đó.
+4. Gộp Nhánh:
+git merge <tên nhánh>
+Lệnh này được sử dụng để gộp một nhánh vào nhánh hiện tại. Ví dụ: Nếu bạn đang ở trên nhánh "master", git merge alpha sẽ gộp nhánh "alpha" vào nhánh "master". Các commit sẽ được gộp theo thứ tự thời gian và có thể gây ra xung đột cần giải quyết.
+Git sẽ hiển thị một thông báo commit mặc định, nhưng nếu bạn muốn chỉnh sửa nó, Git sẽ mở một trình soạn thảo để bạn có thể thay đổi nó.
+Thông báo commit thường sẽ chứa thông tin về việc gộp nhánh và có thể có mô tả về sự thay đổi.
+Sau khi chỉnh sửa, lưu và đóng trình soạn thảo để hoàn tất quá trình
+Nếu có xung đột giữa các commit trên hai nhánh, Git sẽ thông báo và yêu cầu bạn giải quyết xung đột trước khi tiếp tục gộp.
+Khi mọi thứ đều hoàn tất và không có xung đột, commit mới sẽ được tạo và các thay đổi từ nhánh nguồn sẽ được tích hợp vào nhánh hiện tại
+5. Xem Lịch Sử Nhánh và Đồ Thị Nhánh:
+git log --oneline --graph
+Lệnh này tạo ra một biểu đồ đồ thị của lịch sử commit trên tất cả các nhánh. Nó giúp bạn xem các nhánh và cách chúng phát triển
+6. Huỷ Bỏ Quá Trình Gộp Nhánh:
+git merge --abort
+Lệnh này được sử dụng để huỷ bỏ quá trình gộp nhánh nếu có lỗi hoặc xung đột mà bạn muốn giữ nguyên nhánh hiện tại.
+7. Đổi Tên Nhánh:
+git branch -M <tên mới>
+Lệnh này dùng để đổi tên của nhánh hiện tại. Ví dụ: git branch -M feature-new sẽ đổi tên nhánh hiện tại thành "feature-new".
+

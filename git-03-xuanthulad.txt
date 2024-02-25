@@ -1,0 +1,16 @@
+Các lệnh reset, huỷ hay xoá commit 
+
+1. Soft Reset (Dùng để "Hủy" Commit):
+git reset --soft HEAD~<số commit>
+Lệnh này "hủy" đi các commit cuối cùng mà không làm thay đổi dữ liệu trong thư mục làm việc. Các thay đổi từ các commit bị "hủy" sẽ chuyển về vùng staging, để bạn có thể sửa đổi và commit lại.
+2. Hard Reset (Xoá hoàn toàn Commit):
+git reset --hard HEAD~<số commit>
+Lệnh này xoá toàn bộ các commit cuối cùng và làm sạch lịch sử commit. Mọi thay đổi từ các commit này đều bị mất đi và không thể phục hồi được. Sử dụng cẩn thận vì nó có thể làm mất dữ liệu quan trọng.
+3. Reset Theo Từng File hoặc Thư Mục:
+Lệnh này được sử dụng để đưa các tập tin hoặc thư mục từ vùng staging area ra khỏi trạng thái staged, giữ nguyên trạng thái của nó trong thư mục làm việc
+4 . Restore Tập Tin trong Trường Hợp Thay Đổi Chưa Biết:
+git restore --source=HEAD --worktree -- <file>
+--source=HEAD: Cho biết nơi bạn muốn lấy dữ liệu từ (trong trường hợp này là commit cuối cùng).
+--worktree: Cho biết nơi bạn muốn phục hồi file (trong trường hợp này là thư mục làm việc).
+<file>: Tên của file bạn muốn phục hồi.
+Lệnh này sẽ phục hồi file từ commit cuối cùng về thư mục làm việc. Sau đó, bạn có thể sử dụng các lệnh khác như git diff để xem xét sự khác biệt giữa file đã thay đổi và file trong thư mục làm việc.

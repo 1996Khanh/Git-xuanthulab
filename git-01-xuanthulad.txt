@@ -1,0 +1,14 @@
+Kiểm tra cài đặt và cấu hình git
+
+1.Kiểm tra phiên bản Git:
+git --version
+Lệnh này sẽ hiển thị phiên bản của Git đang được cài đặt trên máy.
+2. Kiểm tra cấu hình user.name và user.email:
+git config (--global/--local) --list
+Lệnh này sẽ liệt kê các thông tin cấu hình user.name và user.email, tùy thuộc vào việc bạn sử dụng cờ --global (toàn cục) hoặc --local (cục bộ) để kiểm tra cấu hình.
+3. Thiết lập user.name và user.email:
+git config (--global/--local) user.name "YourName"
+git config (--global/--local) user.email "your.email@example.com"
+Lệnh này được sử dụng để thiết lập thông tin user.name và user.email. cofig --global sẽ áp dụng cấu hình toàn cục cho toàn bộ hệ thống, trong khi --local chỉ áp dụng cho dự án đang làm việc. Thông tin này sẽ được sử dụng khi bạn thực hiện các commit để xác định người đã sửa code và lưu trữ code trong dự án.
+
+ 

@@ -1,0 +1,26 @@
+Gộp nhánh bằng git rebase
+
+1. Lệnh Gộp Nhánh với Git Rebase:
+git rebase <tên nhánh>
+Lệnh này sử dụng rebase để gộp nhánh hiện tại vào nhánh được chỉ định (<tên nhánh>). Rebase sẽ nối tiếp các commit từ nhánh nguồn vào commit cuối cùng của nhánh hiện tại.
+Ví dụ:
+git rebase branch_a
+Trong trường hợp xung đột, bạn sẽ phải giải quyết từng commit một.
+Nếu bạn muốn đổi tên commit sau khi sửa xung đột:
+git add .
+git commit -m "Tên mới"
+git rebase --skip
+Lặp lại quy trình trên cho mỗi commit sửa xung đột tiếp theo.
+Nếu bạn không muốn đổi tên commit sau khi sửa xung đột:
+git add .
+git rebase --continue
+Lặp lại quy trình trên cho mỗi commit sửa xung đột tiếp theo.
+
+Lưu ý: Các commit bị sửa xung đột sẽ có mã hash thay đổi trong quá trình rebase, điều này khác biệt so với merge.
+2. Huỷ Lệnh Rebase:
+git rebase --abort
+Lệnh này được sử dụng để huỷ bỏ quá trình rebase nếu bạn muốn quay lại trạng thái trước khi bắt đầu rebase.
+
+Lưu Ý Quan Trọng:
+Rebase có thể làm thay đổi lịch sử commit, vì vậy chỉ sử dụng nó trên nhánh cá nhân (không phải trên nhánh đã được chia sẻ với người khác).
+Rebase tạo ra lịch sử commit sạch sẽ hơn, nhưng cũng có thể tạo ra xung đột cần giải quyết.

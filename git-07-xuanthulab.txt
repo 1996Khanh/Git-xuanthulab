@@ -1,0 +1,37 @@
+Tag trong Git, đánh dấu phiên bản và đẩy lên GitHub
+1. git tag : kiểm tra có những tag nào trong git 
+2 .git show <tên tag> : xem thông tin chi tiết của tag
+3. git tag -d <tên tag> : xoá tag
+4. git checkout <tên tag> : quay về phiên bản tag đó thay vì sử dụng mã hash
+5. git checkout -b <tên nhánh mới> <tên tag> : lệnh này là tạo ra rẽ nhánh mới tương tự với git branch tuy nhiên nó sẽ rẽ tại chỗ ta đánh tag
+6. git push <tên remote> <tên tag>/--tag(đẩy toàn bộ) : đẩy dữ liệu centralrepo 
+7. git push --delete <tên remote> <tên tag>/--tag : xoá tag trên centralrepo
+
+Quản Lý Tag Trong Git và Đẩy Lên GitHub:
+1. Kiểm Tra và Hiển Thị Tag:
+git tag
+Lệnh này kiểm tra và hiển thị tất cả các tag hiện có trong kho lưu trữ.
+2. Xem Chi Tiết Của Một Tag Cụ Thể:
+git show <tên tag>
+Sử dụng lệnh này để xem thông tin chi tiết của một tag cụ thể.
+3. Xoá Một Tag:
+git tag -d <tên tag>
+Lệnh này xoá một tag cụ thể khỏi kho lưu trữ
+4. Quay Về Phiên Bản Của Một Tag:
+git checkout <tên tag>
+Sử dụng để chuyển sang phiên bản của một tag thay vì sử dụng mã hash.
+5. Tạo Nhánh Mới Từ Một Tag:
+git checkout -b <tên nhánh mới> <tên tag>
+Lệnh này tạo ra một nhánh mới từ một tag, tương tự như git branch, nhưng nó bắt đầu từ địa điểm của tag.
+6. Đẩy Tag Lên Remote:
+git push <tên remote> <tên tag>/--tags
+Sử dụng để đẩy một tag cụ thể hoặc toàn bộ các tag lên kho lưu trữ trung tâm (GitHub, GitLab, Bitbucket, vv.)
+7. Xoá Tag Trên Remote:
+git push --delete <tên remote> <tên tag>/--tags
+Lệnh này xoá một tag cụ thể hoặc toàn bộ các tag trên kho lưu trữ trung tâm.
+8. Tạo Tag với Thông Tin (Chữ Ký và Thông Điệp):
+git tag -a "tên_tag" -m "Thông điệp mô tả tag"
+Lệnh này tạo một tag có tên "tên_tag" kèm theo thông điệp mô tả (được đặt bởi -m). Thêm tùy chọn -a để tạo ra một tag chứa thông tin như chữ ký và ngày tạo.
+Ví dụ :
+git tag -a v1.0 -m "Phiên bản 1.0 - Release cuối cùng của sản phẩm"
+Lưu ý: Khi tạo tag với thông tin (-a), Git sẽ mở một cửa sổ để bạn nhập thông điệp mô tả chi tiết và ký tự chữ ký (nếu đã cấu hình).

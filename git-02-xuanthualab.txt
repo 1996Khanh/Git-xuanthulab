@@ -1,0 +1,38 @@
+Đây là một số lệnh Git cơ bản và quan trọng trong quá trình quản lý phiên bản mã nguồn.
+
+1. Khởi tạo một Repository Git:
+git init
+Lệnh này tạo một kho lưu trữ Git hoặc bắt đầu quản lý phiên bản mã nguồn của một dự án từ đầu. Khi chạy git init, Git tạo ra một thư mục ẩn .git trong thư mục dự án, chứa toàn bộ hệ thống quản lý phiên bản Git và lịch sử sửa đổi.
+2. Kiểm Tra Trạng Thái của Working Directory và Staging Area:
+git status
+Lệnh này cho phép xem trạng thái của các tập tin và thư mục trong thư mục làm việc. Các tập tin có thể ở trạng thái untracked (chưa theo dõi), modified (đã bị thay đổi), deleted (đã xoá), staged (đã được chuẩn bị để commit), hoặc unmodified (đã commit không có thay đổi).
+3. Thêm Tập Tin/Thư Mục vào Staging Area:
+git add <file/dir/.>
+Lệnh này đưa các tập tin hoặc thư mục từ trạng thái untracked hoặc modified vào vùng staging area để chuẩn bị cho quá trình commit.
+4. Tạo Commit:
+Lệnh này tạo ra một bản ghi (commit) mới trong lịch sử của kho lưu trữ Git. Mỗi commit có một mã hash duy nhất và đi kèm với một thông điệp mô tả nội dung của commit.
+5. Xem Lịch Sử Commit:
+git log <tên nhánh>(tùy chọn)
+Lệnh này hiển thị lịch sử các commit trong kho lưu trữ. Cung cấp thông tin như mã hash, nhánh, tác giả, ngày giờ, và nội dung của mỗi commit. Sử dụng git log --oneline <tên nhánh> để hiển thị thông tin ngắn gọn
+6. Phục Hồi Tập Tin từ Commit Cuối:
+git restore <file/dir/.>
+Lệnh này được sử dụng khi muốn khôi phục tập tin hoặc thư mục từ commit cuối cùng và đưa chúng về trạng thái làm việc hiện tại.
+7. So Sánh Thay Đổi:
+git diff
+Lệnh này so sánh thay đổi giữa commit cuối cùng và thư mục làm việc. Sử dụng git diff --staged để so sánh với vùng staging và git diff <mã hash1> <mã hash2> để so sánh giữa hai commit. Để hiển thị kết quả tóm tắt, sử dụng git diff --stat.
+8. Phục Hồi Tập Tin Từ Commit Trước Đó:
+git checkout <mã hash> -- <file/dir>
+Lệnh này phục hồi tập tin từ commit trước đó và đưa chúng vào vùng staging area.
+9. Hủy Bỏ Staging của Tập Tin/Thư Mục:
+git restore --staged <file/dir>
+Lệnh này hủy bỏ việc đưa tập tin hoặc thư mục vào vùng staging, giữ chúng ở trạng thái modified.
+10. Tạo File .gitignore và Loại Bỏ Tập Tin/Thư Mục:
+Tạo một file có tên .gitignore trong thư mục gốc của dự án để loại bỏ các tập tin và thư mục không cần thiết. Cấu hình bên trong file .gitignore giúp định rõ các quy tắc loại bỏ.
+Loại bỏ tất cả các tập tin có đuôi là .txt: *.txt
+Loại bỏ thư mục có tên là logs: /logs
+Loại bỏ thư mục temp ở bất kỳ đâu trong dự án: temp/
+11. Sửa Đổi Commit Cuối Cùng:
+git commit --amend -m "..."
+Lệnh này sửa đổi commit cuối cùng khi thay đổi của các tập tin hoặc thư mục không nhiều. Không tạo ra commit mới, và mã hash của commit cuối cùng sẽ thay đổi.
+
+
